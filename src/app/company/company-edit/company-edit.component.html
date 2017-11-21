@@ -1,0 +1,12 @@
+<form class="example-form">
+    <mat-card *ngIf="company$ | async as company">
+        <mat-form-field>
+            <input type="text" matInput placeholder="title" [(ngModel)]="company.name" name={{company.name}}>
+        </mat-form-field>
+        <mat-card-actions align="right">
+            <button mat-button (click)="saveCompany(company.name)">SAVE</button>
+            <button mat-button (click)="editCompany(company.name)">Update</button>
+            <button mat-button (click)="removeCompany()">Delete</button>
+        </mat-card-actions>
+    </mat-card>
+</form>
